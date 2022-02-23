@@ -6,6 +6,8 @@
  * @public
  */
 
+import { Book } from "./interfaces";
+
 class User {
 	/**
 	 * Create an user.
@@ -13,13 +15,13 @@ class User {
 	 * @public
 	 * @param {string} name - Username.
 	 * @param {string} lastName - User's last name.
-	 * @param {{ name: string, author: string }[]} books - User's books.
+	 * @param {Book[]} books - User's books.
 	 * @param {string[]} pets - User's pets.
 	 */
 	constructor(
 		private _name: string,
 		private _lastName: string,
-		private _books: { name: string; author: string }[],
+		private _books: Book[],
 		private _pets: string[]
 	) {}
 
@@ -87,9 +89,9 @@ class User {
 	 * Setter to append a new book to the books array
 	 *
 	 * @public
-	 * @param {{ name: string, author: string }} book - The book to be added
+	 * @param {Book} book - The book to be added
 	 */
-	set book(book: { name: string; author: string }) {
+	set book(book: Book) {
 		this._books.push(book);
 	}
 }

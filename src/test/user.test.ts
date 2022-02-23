@@ -1,15 +1,19 @@
 import User from "../user";
 
 describe("User", () => {
-	const user = new User(
-		"Elias",
-		"Jimenez",
-		[
-			{ name: "I, Robot", author: "Isaac Asimov" },
-			{ name: "Klara and the Sun", author: "Kazuo Ishiguro" },
-		],
-		["dog", "cat"]
-	);
+	let user: User;
+
+	beforeEach(() => {
+		user = new User(
+			"Elias",
+			"Jimenez",
+			[
+				{ name: "I, Robot", author: "Isaac Asimov" },
+				{ name: "Klara and the Sun", author: "Kazuo Ishiguro" },
+			],
+			["dog", "cat"]
+		);
+	});
 
 	describe("fullName", () => {
 		it("should return 'Elias Jimenez' when name is 'Elias' and last name is 'Jimenez'", () => {
@@ -24,9 +28,6 @@ describe("User", () => {
 
 			// Check if we received what we expected
 			expect(received).toBe(expected);
-
-			// Restore the mock and revert original implementation.
-			spy.mockClear();
 		});
 	});
 
@@ -43,9 +44,6 @@ describe("User", () => {
 
 			// Check if we received what we expected
 			expect(received).toBe(expected);
-
-			// Restore the mock and revert original implementation.
-			spy.mockClear();
 		});
 	});
 
@@ -62,9 +60,6 @@ describe("User", () => {
 
 			// Check if we received what we expected
 			expect(received).toStrictEqual(expected);
-
-			// Restore the mock and revert original implementation.
-			spy.mockClear();
 		});
 	});
 
@@ -84,9 +79,6 @@ describe("User", () => {
 
 			// Check if we received what we expected
 			expect(received).toStrictEqual(expected);
-
-			// Restore the mock and revert original implementation.
-			spy.mockClear();
 		});
 	});
 
@@ -103,9 +95,6 @@ describe("User", () => {
 
 			// Check if we received what we expected
 			expect(received).toStrictEqual(expected);
-
-			// Restore the mock and revert original implementation.
-			spy.mockClear();
 		});
 	});
 
@@ -130,9 +119,6 @@ describe("User", () => {
 
 			// Check if we received what we expected
 			expect(received).toBe(expected);
-
-			// Restore the mock and revert original implementation.
-			spy.mockClear();
 		});
 	});
 
@@ -165,9 +151,6 @@ describe("User", () => {
 
 			// Check if we received what we expected
 			expect(received).toStrictEqual(expected);
-
-			// Restore the mock and revert original implementation.
-			spy.mockClear();
 		});
 	});
 });
